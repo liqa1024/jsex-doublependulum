@@ -5,6 +5,5 @@ __*
 *.iml
 *.csv
 *.png
-*.gif
 
 !/.gitignore

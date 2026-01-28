@@ -9,22 +9,22 @@ import java.util.concurrent.Future
 
 import static jse.code.UT.Math.*
 
-@Field static final int width = 1024
-@Field static final int height = 1024
+@Field static final int width = 256
+@Field static final int height = 256
 @Field static Future pngTask = null
 
 // 初始化
 def sims = new DoublePendulum[width][height]
 for (y in 0..<height) for (x in 0..<width) {
-    double theta1 = (x/width - 0.5d) * PI*2d  // 0.16d*PI  0.05d
-    double theta2 = (0.5d - y/height) * PI*2d  // 0.88d*PI  0.05d
+    double theta1 = (x/width  - 0.5d) * PI*2d //-0.742d*PI  0.008d
+    double theta2 = (0.5d - y/height) * PI*2d // 0.958d*PI  0.008d
     sims[x][y] = new DoublePendulum(theta1, theta2)
 }
 
 // 动画设置
-double fps = 1
-double time = 100d // s
-double dt = 0.005d
+double fps = 8
+double time = 30d // s
+double dt = 0.001d
 
 int step = ceil(1/fps/dt) as int
 dt = 1/fps/step

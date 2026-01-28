@@ -5,22 +5,22 @@ import jse.code.UT
 
 import static jse.code.UT.Math.*
 
-// 全局参数，这里选择一个非平凡的参数来测试公式正确性
+// 全局参数
 @Field static final double l1 = 1.0d
-@Field static final double l2 = 1.5d
-@Field static final double m1 = 2.0d
-@Field static final double m2 = 0.7d
+@Field static final double l2 = 1.0d
+@Field static final double m1 = 1.0d
+@Field static final double m2 = 1.0d
 @Field static final double g = 9.8d
 // 模拟参数
 final boolean rk4 = true
-final double dt = 0.005d
-final int loop = 100000
+final double dt = 0.001d
+final int loop = 30000
 final int step = 10
 final String csvPath = 'singleSim.csv'
 
 // 初始角度
-double theta1 =  PI * 0.5d
-double theta2 = -PI * 0.55d
+double theta1 = -0.742d*PI
+double theta2 =  0.958d*PI
 
 // 初始角速度
 double omega1 = 0.0d

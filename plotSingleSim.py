@@ -8,20 +8,20 @@ table = IO.csv2table('singleSim.csv')
 theta1Func = SP.Groovy.invoke('jse.math.function.Func1.from', table.col('time'), table.col('theta1'))
 theta2Func = SP.Groovy.invoke('jse.math.function.Func1.from', table.col('time'), table.col('theta2'))
 
-fps = 12
+fps = 10
 interp = 10
 nframes = int(theta1Func.x().last() * fps)
 
 l1 = 1.0
-l2 = 1.5
+l2 = 1.0
 
-fig = plt.figure(figsize=(6, 4))
+fig = plt.figure(figsize=(6, 5))
 ax = plt.axes([0, 0, 1, 1])
 ax.set_aspect('equal')
 
-R = (l1 + l2)
+R = (l1 + l2)*1.02
 ax.set_xlim(-R, R)
-ax.set_ylim(-R, R*0.5)
+ax.set_ylim(-R, R*0.66667)
 ax.axis('off')
 
 line, = ax.plot([], [], 'o-', lw=2)

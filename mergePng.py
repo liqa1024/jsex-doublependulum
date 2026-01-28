@@ -25,7 +25,7 @@ frames[0].save(
     output_gif,
     save_all=True,
     append_images=frames[1:],
-    duration=1000/12.5,
+    duration=1000/8,
     loop=0
 )
 
